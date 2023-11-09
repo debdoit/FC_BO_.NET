@@ -68,5 +68,35 @@ namespace AngularAuthAPI.Controllers
                 return StatusCode(500, $"Internal server error: {ex}");
             }
         }
+
+        [HttpGet("financial-planners")]
+        public async Task<IActionResult> GetFinancialPlanners(string searchQuery)
+        {
+            try
+            {
+                var financialPlanners = await _context.UserSearchResults.FromSqlRaw(@"
+            SELECT ID, EMAIL, NAME AS ROLENAME, FIRSTNAME, LASTNAME
+                    FROM (
+                        SELECT U.ID, U.EMAIL, R.NAME, U.FIRSTNAME, U.LASTNAME,
+                            ROW_NUMBER() OVER(PARTITION BY U.ID ORDER BY U.EMAIL) AS ROWRANK
+                        FROM [DBO].[ASPNETUSERROLES] UR
+                        JOIN [DBO].[ASPNETROLES] R ON R.ID = UR.ROLEID
+                        JOIN [DBO].[ASPNETUSERS] U ON U.ID = UR.USERID
+                        WHERE (U.Email LIKE {0}
+                            OR U.FirstName LIKE {0}
+                            OR U.LastName LIKE {0})
+                            AND R.NAME = 'Financial Planner' -- Filter by role name
+                    ) RANKEDRESULTS
+                    WHERE ROWRANK = 1", $"%{searchQuery}%").ToListAsync();
+
+                return Ok(financialPlanners);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
     }
 }

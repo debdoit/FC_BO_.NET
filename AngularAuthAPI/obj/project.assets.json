@@ -3353,24 +3353,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DEBASISH PANIGRAHI\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\SUNILKUMAR DODDI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC-BO-services\\AngularAuthAPI\\AngularAuthAPI.csproj",
+      "projectUniqueName": "C:\\Users\\SUNILKUMAR DODDI\\Desktop\\FamilycentralBackoffice\\Services\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj",
       "projectName": "AngularAuthAPI",
-      "projectPath": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC-BO-services\\AngularAuthAPI\\AngularAuthAPI.csproj",
-      "packagesPath": "C:\\Users\\DEBASISH PANIGRAHI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC-BO-services\\AngularAuthAPI\\obj\\",
+      "projectPath": "C:\\Users\\SUNILKUMAR DODDI\\Desktop\\FamilycentralBackoffice\\Services\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj",
+      "packagesPath": "C:\\Users\\SUNILKUMAR DODDI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SUNILKUMAR DODDI\\Desktop\\FamilycentralBackoffice\\Services\\FC_BO_.NET\\AngularAuthAPI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\DEBASISH PANIGRAHI\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\SUNILKUMAR DODDI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
