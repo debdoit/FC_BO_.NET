@@ -14,5 +14,6 @@ namespace AngularAuthAPI.Models
         public string? UPDATED_BY { get; set; }
         public int? PRACTIONER_ID { get; set; }
         public int? TRANSACTION_ID { get; set; }
+        
     }
 }
