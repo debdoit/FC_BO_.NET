@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj": {}
+    "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\FC_BO\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj": {
+    "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\FC_BO\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj",
+        "projectUniqueName": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\FC_BO\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj",
         "projectName": "AngularAuthAPI",
-        "projectPath": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj",
+        "projectPath": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\FC_BO\\.NET\\FC_BO_.NET\\AngularAuthAPI\\AngularAuthAPI.csproj",
         "packagesPath": "C:\\Users\\DEBASISH PANIGRAHI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\.NET\\FC_BO_.NET\\AngularAuthAPI\\obj\\",
+        "outputPath": "C:\\Users\\DEBASISH PANIGRAHI\\Desktop\\FC_BO\\.NET\\FC_BO_.NET\\AngularAuthAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

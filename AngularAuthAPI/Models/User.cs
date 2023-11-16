@@ -29,7 +29,7 @@ namespace AngularAuthAPI.Models
             set { _role = value; }
         }
         public string ?Email { get; set; }
-        public string ? Contact_No { get; set; }
+        public string ?Contact { get; set; }
     }
 
 }

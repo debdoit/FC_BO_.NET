@@ -26,8 +26,6 @@ namespace AngularAuthAPI.Controllers
 
 
 
-
-
         [HttpPost("authenticate")]
         public async Task<IActionResult> Authenticate([FromBody] User userobj)
         {
@@ -47,10 +45,21 @@ namespace AngularAuthAPI.Controllers
 
             return Ok(new
             {
-                Token= user.Token,
-                Message = "Login Successful"
+                Token = user.Token,
+                Message = "Login Successful",
+                User = new
+                {
+                    Id = user.Id, // Replace with the actual property name for user identifier
+                    Username = user.Username,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email
+                    // Include other user details as needed
+                }
             });
         }
+
+
 
 
 
@@ -116,23 +125,73 @@ namespace AngularAuthAPI.Controllers
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes("veryverysecret.....");
-            var identity = new ClaimsIdentity(new Claim[]
+
+            var identity = new ClaimsIdentity();
+
+            // Add Id claim if not null
+            if (user.Id > 0)
             {
-        new Claim(ClaimTypes.Role, user.Role),
-        new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}")
-            });
+                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
+            }
+
+            // Add Role claim if not null
+            if (!string.IsNullOrEmpty(user.Role))
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, user.Role));
+            }
+
+            // Add Name claim if both first and last names are not null
+            if (!string.IsNullOrEmpty(user.FirstName) && !string.IsNullOrEmpty(user.LastName))
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"));
+            }
+
+            // Add Username claim if not null
+            if (!string.IsNullOrEmpty(user.Username))
+            {
+                identity.AddClaim(new Claim("Username", user.Username));
+            }
+
+            // Add FirstName claim if not null
+            if (!string.IsNullOrEmpty(user.FirstName))
+            {
+                identity.AddClaim(new Claim("FirstName", user.FirstName));
+            }
+
+            // Add LastName claim if not null
+            if (!string.IsNullOrEmpty(user.LastName))
+            {
+                identity.AddClaim(new Claim("LastName", user.LastName));
+            }
+
+            // Add Email claim if not null
+            if (!string.IsNullOrEmpty(user.Email))
+            {
+                identity.AddClaim(new Claim("Email", user.Email));
+            }
+
+            // Add Contact_No claim if not null
+            if (!string.IsNullOrEmpty(user.Contact))
+            {
+                identity.AddClaim(new Claim("Contact", user.Contact));
+            }
 
             var credentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = identity,
-                Expires = DateTime.Now.AddDays(1),// Change to one hour expiration (adjust as needed)
+                Expires = DateTime.Now.AddDays(1), // Change to one hour expiration (adjust as needed)
                 SigningCredentials = credentials
             };
 
             var token = jwtTokenHandler.CreateToken(tokenDescriptor);
             return jwtTokenHandler.WriteToken(token);
         }
+
+
+
+
 
 
     }
