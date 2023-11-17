@@ -19,6 +19,8 @@ namespace AngularAuthAPI.Context
         public DbSet<GDPRCustomer> GDPRCustomers { get; set; }
 
         public DbSet<PasswordResetRequest> PasswordResetRequest { get; set; }
+       
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,6 +31,7 @@ namespace AngularAuthAPI.Context
             modelBuilder.Entity<getCustomerNotes>().ToTable("TBL_CUSTOMER_NOTES");
             modelBuilder.Entity<GDPRCustomer>().ToTable("TBL_GDPR_CUSTOMER");
             modelBuilder.Entity<PasswordResetRequest>().ToTable("USERS");
+            
 
         }
     }

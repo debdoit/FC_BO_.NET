@@ -62,6 +62,86 @@ namespace AngularAuthAPI.Controllers
 
 
 
+        [HttpPut("update-profile/{id}")]
+        public async Task<IActionResult> UpdateProfile(int id, [FromBody] User updatedUser)
+        {
+            try
+            {
+                // Get the current user from the database based on the provided ID
+                var currentUser = await _authContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+                if (currentUser == null)
+                    return NotFound($"User with ID {id} Not Found");
+
+                // Update user properties
+                currentUser.FirstName = updatedUser.FirstName;
+                currentUser.LastName = updatedUser.LastName;
+                currentUser.Email = updatedUser.Email;
+                currentUser.Contact = updatedUser.Contact;
+
+                // Save changes to the database
+                _authContext.Entry(currentUser).State = EntityState.Modified;
+                await _authContext.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    Message = "Profile Updated Successfully",
+                    User = new
+                    {
+                        Id = currentUser.Id,
+                        Username = currentUser.Username,
+                        FirstName = currentUser.FirstName,
+                        LastName = currentUser.LastName,
+                        Email = currentUser.Email,
+                        Contact = currentUser.Contact
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log or return an error response)
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+
+
+
+
+        [HttpGet("get-user/{id}")]
+        public async Task<IActionResult> GetUserById(int id)
+        {
+            try
+            {
+                var user = await _authContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+
+                if (user == null)
+                    return NotFound($"User with ID {id} Not Found");
+
+                return Ok(new
+                {
+                    Id = user.Id,
+                    Username = user.Username,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    Contact = user.Contact,
+                    Role = user.Role
+                    // Include other user details as needed
+                });
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log or return an error response)
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+
+
+
+
+
+
 
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] User userobj)
