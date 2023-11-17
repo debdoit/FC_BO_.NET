@@ -138,11 +138,6 @@ namespace AngularAuthAPI.Controllers
 
 
 
-
-
-
-
-
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] User userobj)
         {
@@ -165,15 +160,10 @@ namespace AngularAuthAPI.Controllers
             if(!string.IsNullOrEmpty(pass))
                 return BadRequest(new {Message = pass.ToString()});
 
-
-
-
-
-
-
+            string userRole = userobj.Role;
 
             userobj.Password = PasswordHash.HashPassword(userobj.Password);
-            userobj.Role = "User";
+            userobj.Role = userRole;
             userobj.Token = "";
             await _authContext.Users.AddAsync(userobj);
             await _authContext.SaveChangesAsync();
