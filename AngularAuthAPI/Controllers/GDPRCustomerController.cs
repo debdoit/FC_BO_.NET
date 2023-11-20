@@ -38,14 +38,14 @@ namespace AngularAuthAPI.Controllers
             }
         }
 
-        [HttpPost("UpdateGDPRCustomer/{customerId}")]
+        [HttpPut("UpdateGDPRCustomer/{customerId}")]
         public IActionResult UpdateGDPRCustomer(string customerId, [FromBody] GDPRCustomerUpdateRequest request)
         {
             var customer = _context.GDPRCustomers.FirstOrDefault(c => c.CUSTOMER_ID == customerId);
             if (customer == null)
             {
-                customer = new GDPRCustomer { CUSTOMER_ID = customerId };
-                _context.GDPRCustomers.Add(customer);
+                // Return NotFound if the customer is not found
+                return NotFound($"Customer with ID {customerId} not found.");
             }
 
             switch (request.UpdateType.ToLower())
@@ -67,5 +67,6 @@ namespace AngularAuthAPI.Controllers
 
             return Ok("GDPR data updated successfully.");
         }
+
     }
 }
