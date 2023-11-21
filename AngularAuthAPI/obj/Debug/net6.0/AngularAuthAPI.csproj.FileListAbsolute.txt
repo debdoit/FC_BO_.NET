@@ -790,3 +790,11 @@ C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\obj\Deb
 C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\obj\Debug\net6.0\AngularAuthAPI.pdb
 C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\obj\Debug\net6.0\AngularAuthAPI.genruntimeconfig.cache
 C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\obj\Debug\net6.0\ref\AngularAuthAPI.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\MailKit.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\MimeKit.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\DEBASISH PANIGRAHI\Desktop\FC_BO\.NET\FC_BO_.NET\AngularAuthAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
